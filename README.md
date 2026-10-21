@@ -55,3 +55,21 @@ frontend/src
 │   └── controller.ts    gestures → actions
 └── ui/                  side panel, 2D overlay (skeleton, cursors, labels), capture/recording
 ```
+
+## Promo video (`video/`)
+
+A 20-second, 1080×1080 promo built with [HyperFrames](https://hyperframes.heygen.com) from **real renders of the app**.
+
+```bash
+# 1. start the app (frontend/) — the footage is rendered from its ?demo mode
+cd frontend && npm run dev
+# 2. in another terminal: render the hologram clips, rebuild frames, render the MP4
+cd video && npm install
+node scripts/render-clips.mjs          # → capture/assets/*.mp4 (copy into assets/)
+python scripts/build-frames.py
+npx hyperframes render --output renders/holoscope.mp4
+```
+
+Rendered clips, sound effects and final videos are not committed (they are large and regenerable).
+Sound effects are fetched from Openverse by the HyperFrames audio step — check each sound's license
+and credit its author before publishing a video that uses them.
