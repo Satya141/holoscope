@@ -31,7 +31,7 @@ const CameraComposite = {
       vec3 holo = texture2D(tDiffuse, vUv).rgb;
       vec2 uv = (vec2(1.0 - vUv.x, vUv.y) - 0.5) * uScale + 0.5;
       vec3 cam = texture2D(tVideo, uv).rgb;
-      cam = cam * 0.72 * uVideoOn;   // keep the camera clear; holograms stay readable via screen blend
+      cam = cam * 0.62 * uVideoOn;   // keep the camera clear; holograms stay readable via screen blend
       gl_FragColor = vec4(1.0 - (1.0 - cam) * (1.0 - holo), 1.0);
     }`,
 };
@@ -64,6 +64,9 @@ export class Stage {
   constructor(canvas: HTMLCanvasElement) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: false, powerPreference: 'high-performance' });
     this.renderer.setClearColor(0x000000, 1);
+    // Filmic tone mapping rolls off dense, overlapping particles instead of clipping them to pure white.
+    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.renderer.toneMappingExposure = 1.25;
     this.camera.position.set(0, 0.4, CAM_Z);
     this.camera.lookAt(0, 0, 0);
     this.scene.add(this.root);

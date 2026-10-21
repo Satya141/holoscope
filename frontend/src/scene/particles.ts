@@ -36,7 +36,7 @@ void main() {
   gl_PointSize = uSize * uPixelRatio * (0.55 + aRand * 0.9) * (1.0 + uHighlight * 0.7 + scan * 0.6) * (8.0 / -mv.z);
 
   vColor = aColor * (1.0 + uHighlight * 1.1 + scan * 1.6);
-  vAlpha = 0.7 * twinkle * uDim * (0.15 + 0.85 * t) * smoothstep(0.0, 0.12, uAppear);
+  vAlpha = 0.55 * twinkle * uDim * (0.15 + 0.85 * t) * smoothstep(0.0, 0.12, uAppear);
 }`;
 
 const FRAG = /* glsl */ `
