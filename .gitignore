@@ -1,0 +1,19 @@
+# dependencies & builds
+node_modules/
+dist/
+*.log
+
+# downloaded at `npm install` (scripts/setup-assets.mjs)
+frontend/public/mediapipe/
+frontend/public/models/hand_landmarker.task
+
+# HyperFrames working files
+video/.hyperframes/
+video/.thumbnails/
+video/.waveform-cache/
+
+# media — regenerable (see README); sound effects need license checks before publishing
+video/renders/
+video/assets/*.mp4
+video/capture/assets/*.mp4
+video/assets/sfx/

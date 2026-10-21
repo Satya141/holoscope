@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holoscope</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <video id="video" playsinline muted></video>
+  <canvas id="gl"></canvas>
+  <canvas id="overlay"></canvas>
+  <div id="vignette"></div>
+
+  <aside id="panel" class="glass ui">
+    <header>
+      <div class="logo"></div>
+      <div>
+        <h2 id="modelName"></h2>
+        <p class="muted"><span id="chipCat"></span> · <span id="chipParts"></span></p>
+      </div>
+    </header>
+    <div class="status">
+      <i></i><b id="stTrack" class="loading">Starting…</b>
+      <span class="muted"><span id="stHands">0 hands</span> · <span id="stFps">–</span> fps</span>
+    </div>
+    <div id="diag" class="muted"></div>
+    <div id="partCard" class="card hidden"><b id="partName"></b><p id="partDesc"></p></div>
+    <details id="more">
+      <summary>Controls &amp; gestures</summary>
+      <p id="modelDesc" class="muted"></p>
+      <div class="slider">
+        <div class="row"><label>Explode</label><span id="exVal">0%</span></div>
+        <input id="exRange" type="range" min="0" max="100" value="0" />
+      </div>
+      <div class="slider">
+        <div class="row"><label>Explode intensity</label><span id="inVal">100%</span></div>
+        <input id="inRange" type="range" min="30" max="200" value="100" />
+      </div>
+      <ul id="gestures"></ul>
+    </details>
+  </aside>
+  <div id="hint" class="ui"></div>
+
+  <nav id="tools" class="ui">
+    <button id="tShot" title="Screenshot (S)"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></button>
+    <button id="tRec" title="Record video (V)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" class="dot"/></svg></button>
+    <button id="tCam" title="Camera background (C)"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 11l5-3v8l-5-3z"/></svg></button>
+    <button id="tPyr" title="Pyramid hologram mode (P)"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 3v16"/></svg></button>
+    <button id="tUi" title="Hide UI (H)"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+    <button id="tFull" title="Fullscreen (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </nav>
+  <div id="recBadge" class="hidden">● REC <span id="recTime">0:00</span></div>
+
+  <nav id="models" class="ui"></nav>
+  <div id="toast"></div>
+
+  <div id="splash">
+    <div class="glass splash-card">
+      <div class="logo big"></div>
+      <h1>Holoscope</h1>
+      <p id="splashMsg">Allow camera access to control the hologram with your hands.</p>
+      <button id="splashRetry" class="hidden">Retry</button>
+      <button id="splashSkip" class="hidden">Continue with mouse</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
