@@ -1,0 +1,5 @@
+{"id":"sfx_001","type":"sfx","path":"assets/sfx/whoosh.mp3","source":"search","description":"whoosh","duration":3.2,"provenance":{"provider":"openverse.audio","prompt":"whoosh"}}
+{"id":"sfx_002","type":"sfx","path":"assets/sfx/impact.mp3","source":"search","description":"impact","duration":2.6,"provenance":{"provider":"openverse.audio","prompt":"impact"}}
+{"id":"sfx_003","type":"sfx","path":"assets/sfx/click.mp3","source":"search","description":"click","duration":2.3,"provenance":{"provider":"openverse.audio","prompt":"click"}}
+{"id":"sfx_004","type":"sfx","path":"assets/sfx/pop.mp3","source":"search","description":"pop","duration":0.5,"provenance":{"provider":"openverse.audio","prompt":"pop"}}
+{"id":"sfx_005","type":"sfx","path":"assets/sfx/riser.mp3","source":"search","description":"riser","duration":2,"provenance":{"provider":"openverse.audio","prompt":"riser"}}

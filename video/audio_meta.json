@@ -1,0 +1,70 @@
+{
+  "bgm": null,
+  "bgm_pending": false,
+  "voices": [],
+  "sfx": [
+    {
+      "frame": 1,
+      "file": "assets/sfx/whoosh.mp3",
+      "offset_s": 0,
+      "duration_s": 3.155,
+      "volume": 0.35,
+      "license": "cc0",
+      "credit": "\"Deep Whoosh #1\" by Kinoton is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/."
+    },
+    {
+      "frame": 1,
+      "file": "assets/sfx/impact.mp3",
+      "offset_s": 0,
+      "duration_s": 2.623,
+      "volume": 0.35,
+      "license": "cc0",
+      "credit": "\"Impact\" by chriskalos is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/."
+    },
+    {
+      "frame": 3,
+      "file": "assets/sfx/whoosh.mp3",
+      "offset_s": 0,
+      "duration_s": 3.155,
+      "volume": 0.35,
+      "license": "cc0",
+      "credit": "\"Deep Whoosh #1\" by Kinoton is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/."
+    },
+    {
+      "frame": 4,
+      "file": "assets/sfx/click.mp3",
+      "offset_s": 0,
+      "duration_s": 2.31,
+      "volume": 0.35,
+      "license": "cc0",
+      "credit": "\"Mouse click sounds\" by Masgame is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/."
+    },
+    {
+      "frame": 5,
+      "file": "assets/sfx/pop.mp3",
+      "offset_s": 0,
+      "duration_s": 0.489,
+      "volume": 0.35,
+      "license": "by",
+      "credit": "\"Pop, High, A (H1).wav\" by InspectorJ is licensed under CC BY 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/."
+    },
+    {
+      "frame": 6,
+      "file": "assets/sfx/whoosh.mp3",
+      "offset_s": 0,
+      "duration_s": 3.155,
+      "volume": 0.35,
+      "license": "cc0",
+      "credit": "\"Deep Whoosh #1\" by Kinoton is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/."
+    },
+    {
+      "frame": 7,
+      "file": "assets/sfx/riser.mp3",
+      "offset_s": 0,
+      "duration_s": 2,
+      "volume": 0.35,
+      "license": "cc0",
+      "credit": "\"Riser\" by Rizzard is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/."
+    }
+  ]
+}

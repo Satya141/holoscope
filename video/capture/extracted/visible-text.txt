@@ -1,0 +1,5 @@
+Holoscope — Reach in. See how anything works.
+Your hands are the controller.
+Gestures: Open slowly — explode it, see inside. Close your hand — pull it back together. Move or twist — rotate and tilt it. Point — highlight a part. Pinch a part — pull it out, drag it. Two hands — apart or together to zoom. Peace — jump to the next model.
+Models: Turbofan Jet Engine (Machines, 10 parts) · Sports Car (Vehicles, 14 parts) · Human Brain (Anatomy, 10 parts) · Planet Earth (Space, 8 parts) · DNA Double Helix (Biology, 4 parts).
+Built with: webcam + MediaPipe hand tracking + three.js particles, running live in the browser.

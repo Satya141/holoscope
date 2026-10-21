@@ -1,0 +1,44 @@
+{
+  "lines": [
+    {
+      "id": "01",
+      "sfx": [
+        "whoosh",
+        "impact"
+      ]
+    },
+    {
+      "id": "03",
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "id": "04",
+      "sfx": [
+        "click"
+      ]
+    },
+    {
+      "id": "05",
+      "sfx": [
+        "pop"
+      ]
+    },
+    {
+      "id": "06",
+      "sfx": [
+        "whoosh"
+      ]
+    },
+    {
+      "id": "07",
+      "sfx": [
+        "riser"
+      ]
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  }
+}
