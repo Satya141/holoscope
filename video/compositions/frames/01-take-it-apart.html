@@ -1,0 +1,56 @@
+<template>
+<div id="root" data-composition-id="01-take-it-apart" data-width="1080" data-height="1080" data-start="0" data-duration="4.5">
+<!-- approved frame video hoisted by assemble-index -->
+<div id="f01-layer-1" class="clip f01-layer f01-vignette" data-start="0" data-duration="4.5" data-track-index="1"></div>
+<div id="f01-layer-2" class="clip f01-layer" data-start="0" data-duration="4.5" data-track-index="2">
+  <div class="f01-line f01-a f01-shadow"><span class="f01-w">crack</span> <span class="f01-w">a</span> <span class="f01-w">planet</span> <span class="f01-w">open.</span></div>
+  <div class="f01-line f01-b f01-shadow"><span class="f01-w">with</span> <span class="f01-w">your</span> <span class="f01-w accent">bare</span> <span class="f01-w accent">hands.</span></div>
+  <div class="f01-rule"></div>
+</div>
+<style>
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-900-normal.woff2") format("woff2"); font-weight: 900; font-display: block; }
+@font-face { font-family: "IBM Plex Mono"; src: url("assets/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: block; }
+#root { position: absolute; inset: 0; width: 1080px; height: 1080px; overflow: hidden; font-family: "Inter", sans-serif; color: #eef2f8; }
+.f01-layer { position: absolute; inset: 0; width: 1080px; height: 1080px; }
+.f01-vignette { background: linear-gradient(180deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.45) 24%, rgba(0,0,0,0) 46%); }
+.f01-w { display: inline-block; will-change: transform, opacity; }
+.accent { color: #38f4ff; }
+.f01-shadow { text-shadow: 0 2px 28px rgba(0,0,0,0.65); }
+
+.f01-line { position: absolute; left: 0; right: 0; text-align: center; font-weight: 900; letter-spacing: -0.04em;
+  text-transform: lowercase; line-height: 1; white-space: nowrap; }
+.f01-a { top: 96px; font-size: 80px; }
+.f01-b { top: 88px; font-size: 96px; }
+.f01-rule { position: absolute; left: 498px; top: 206px; width: 520px; height: 3px; background: #38f4ff;
+  box-shadow: 0 0 18px #38f4ff; transform-origin: left center; }
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const R = '[data-composition-id="01-take-it-apart"] ';
+  const q = (s) => document.querySelectorAll(R + s);
+  const tl = gsap.timeline({ paused: true });
+
+  // Scene 1: first line, per-word staggered reveal as the engine forms
+  tl.fromTo(q('.f01-a .f01-w'), { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.1 }, 0.25);
+  tl.set(q('.f01-b'), { autoAlpha: 0 }, 0);
+  tl.set(q('.f01-rule'), { scaleX: 0 }, 0);
+  // Scene 2: hard-cut word swap on the explosion frame (2.2 s)
+  tl.set(q('.f01-a'), { autoAlpha: 0 }, 2.2);
+  tl.set(q('.f01-b'), { autoAlpha: 1 }, 2.2);
+  tl.fromTo(q('.f01-b'), { scale: 1.08 }, { scale: 1, duration: 0.45, ease: 'power3.out' }, 2.2);
+  tl.fromTo(q('.f01-rule'), { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: 'power3.out' }, 2.35);
+  // Scene 3: hold — subtle jitter only
+  tl.fromTo(q('.f01-b'), { y: 0 }, { y: 1.5, duration: 1.6, ease: 'sine.inOut' }, 2.8);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["01-take-it-apart"] = tl;
+})();
+</script>
+</div>
+</template>
