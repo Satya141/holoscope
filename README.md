@@ -73,3 +73,11 @@ npx hyperframes render --output renders/holoscope.mp4
 Rendered clips, sound effects and final videos are not committed (they are large and regenerable).
 Sound effects are fetched from Openverse by the HyperFrames audio step — check each sound's license
 and credit its author before publishing a video that uses them.
+
+## License
+
+Code: [MIT](LICENSE) © 2026 Satyanarayana J.
+
+Bundled fonts in `video/assets/fonts/` — Inter (© The Inter Project Authors) and IBM Plex Mono (© IBM Corp.) — are
+licensed under the SIL Open Font License 1.1; their license texts sit next to the font files.
+Dependencies installed by npm (three.js — MIT, MediaPipe Tasks — Apache-2.0, and others) keep their own licenses.
