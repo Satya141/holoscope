@@ -21,7 +21,7 @@ export const jetEngine: ModelDef = {
   category: 'Machines',
   icon: '✈️',
   desc: 'Air in, thrust out — every stage of a turbofan.',
-  points: 55000,
+  points: 80000,
   view: { yaw: -0.75, pitch: 0.3 },
   build() {
     const fan = merge([

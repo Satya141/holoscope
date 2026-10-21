@@ -73,7 +73,7 @@ export const sportsCar: ModelDef = {
   category: 'Vehicles',
   icon: '🏎️',
   desc: 'V8, drivetrain, suspension and cabin.',
-  points: 58000,
+  points: 85000,
   view: { yaw: -0.65, pitch: 0.32 },
   build() {
     const wheels: PartDef[] = ([[1.3, 0.82], [1.3, -0.82], [-1.3, 0.82], [-1.3, -0.82]] as const).map(([x, z]) => ({

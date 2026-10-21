@@ -10,7 +10,7 @@ export const dna: ModelDef = {
   category: 'Biology',
   icon: '🧬',
   desc: 'Two backbones zipped together by base pairs.',
-  points: 45000,
+  points: 65000,
   view: { yaw: 0, pitch: 0.15 },
   build() {
     const a = new Helix(0.7, 4.6, 2.2, 0), b = new Helix(0.7, 4.6, 2.2, Math.PI * 0.8);

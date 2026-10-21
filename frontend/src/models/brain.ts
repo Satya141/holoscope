@@ -19,7 +19,7 @@ export const brain: ModelDef = {
   category: 'Anatomy',
   icon: '🧠',
   desc: 'Cortex lobes, cerebellum and brain stem.',
-  points: 52000,
+  points: 75000,
   view: { yaw: 0.9, pitch: 0.25 },
   build() {
     const buckets = new Map<string, number[]>();
@@ -30,7 +30,7 @@ export const brain: ModelDef = {
     };
     const d = new THREE.Vector3();
 
-    for (let i = 0; i < 40000; i++) {
+    for (let i = 0; i < 58000; i++) {
       const side = i % 2 ? 1 : -1;
       d.randomDirection();
       const f = 1 + 0.065 * folds(d.x * 1.3, d.y * 1.3, d.z * 1.3);
@@ -43,12 +43,12 @@ export const brain: ModelDef = {
       const lobe: Lobe = z > 0.45 ? 'Frontal' : z < -0.95 ? 'Occipital' : y > 0.35 ? 'Parietal' : 'Temporal';
       push(`${lobe}|${side}`, x, y, z);
     }
-    for (let i = 0; i < 6000; i++) {
+    for (let i = 0; i < 9000; i++) {
       d.randomDirection();
       const f = 1 + 0.06 * Math.sin(d.y * 40);
       push('Cerebellum', d.x * 0.9 * f, -0.5 + d.y * 0.42 * f, -1.0 + d.z * 0.55 * f);
     }
-    for (let i = 0; i < 2500; i++) {
+    for (let i = 0; i < 3500; i++) {
       const t = Math.random(), a = Math.random() * Math.PI * 2, r = 0.2 * (1 - 0.3 * t);
       push('Stem', Math.cos(a) * r, -0.55 - t * 1.2, -0.45 - t * 0.2 + Math.sin(a) * r);
     }

@@ -31,7 +31,7 @@ const CameraComposite = {
       vec3 holo = texture2D(tDiffuse, vUv).rgb;
       vec2 uv = (vec2(1.0 - vUv.x, vUv.y) - 0.5) * uScale + 0.5;
       vec3 cam = texture2D(tVideo, uv).rgb;
-      cam = mix(vec3(dot(cam, vec3(0.299, 0.587, 0.114))), cam, 0.8) * 0.42 * uVideoOn;
+      cam = cam * 0.72 * uVideoOn;   // keep the camera clear; holograms stay readable via screen blend
       gl_FragColor = vec4(1.0 - (1.0 - cam) * (1.0 - holo), 1.0);
     }`,
 };
@@ -73,7 +73,7 @@ export class Stage {
 
     this.composer = new EffectComposer(this.renderer);
     this.composer.addPass(new RenderPass(this.scene, this.camera));
-    this.composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), 0.7, 0.5, 0.05));
+    this.composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), 0.4, 0.35, 0.25));
     this.composer.addPass(new OutputPass());
     this.composite = new ShaderPass(CameraComposite);
     this.composer.addPass(this.composite);

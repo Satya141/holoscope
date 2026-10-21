@@ -9,7 +9,7 @@ export interface Shared {
 }
 
 export const createShared = (): Shared => ({
-  uTime: { value: 0 }, uPixelRatio: { value: 1 }, uScanY: { value: -10 }, uSize: { value: 3.0 },
+  uTime: { value: 0 }, uPixelRatio: { value: 1 }, uScanY: { value: -10 }, uSize: { value: 2.4 },
 });
 
 const VERT = /* glsl */ `
@@ -25,18 +25,18 @@ void main() {
   float t = clamp((uAppear - aRand * 0.4) / 0.6, 0.0, 1.0);
   t = t * t * (3.0 - 2.0 * t);
   vec3 p = mix(aScatter, position, t);
-  p += 0.01 * vec3(sin(uTime * 1.7 + aRand * 40.0), cos(uTime * 1.3 + aRand * 25.0), sin(uTime * 1.1 + aRand * 60.0));
+  p += 0.003 * vec3(sin(uTime * 1.7 + aRand * 40.0), cos(uTime * 1.3 + aRand * 25.0), sin(uTime * 1.1 + aRand * 60.0));
 
   vec4 world = modelMatrix * vec4(p, 1.0);
   vec4 mv = viewMatrix * world;
   gl_Position = projectionMatrix * mv;
 
   float scan = exp(-pow((world.y - uScanY) * 3.0, 2.0));
-  float twinkle = 0.65 + 0.35 * sin(uTime * 3.0 + aRand * 50.0);
+  float twinkle = 0.88 + 0.12 * sin(uTime * 3.0 + aRand * 50.0);
   gl_PointSize = uSize * uPixelRatio * (0.55 + aRand * 0.9) * (1.0 + uHighlight * 0.7 + scan * 0.6) * (8.0 / -mv.z);
 
   vColor = aColor * (1.0 + uHighlight * 1.1 + scan * 1.6);
-  vAlpha = 0.5 * twinkle * uDim * (0.15 + 0.85 * t) * smoothstep(0.0, 0.12, uAppear);
+  vAlpha = 0.7 * twinkle * uDim * (0.15 + 0.85 * t) * smoothstep(0.0, 0.12, uAppear);
 }`;
 
 const FRAG = /* glsl */ `
@@ -45,8 +45,8 @@ varying float vAlpha;
 void main() {
   float d = length(gl_PointCoord - 0.5);
   if (d > 0.5) discard;
-  float a = smoothstep(0.5, 0.0, d);
-  gl_FragColor = vec4(vColor, a * a * vAlpha);
+  float a = smoothstep(0.5, 0.18, d);   // crisp dot with a solid core
+  gl_FragColor = vec4(vColor, a * vAlpha);
 }`;
 
 export function holoMaterial(shared: Shared, appear: { value: number }) {
